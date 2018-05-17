@@ -49,6 +49,7 @@ public class AdhyayanSamagriActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnSamnyaGyan)
     public void btnGeneralKnowledge() {
+
         startActivity(new Intent(this, GenaralKnowledgeActivity.class));
     }
 
