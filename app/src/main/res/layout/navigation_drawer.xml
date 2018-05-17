@@ -1,0 +1,245 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="260dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_for_navigation_drawer"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/txtBackArrow"
+            android:layout_width="@dimen/height_28"
+            android:layout_height="@dimen/height_35"
+            android:layout_marginLeft="@dimen/height_10"
+            android:layout_marginTop="@dimen/height_25"
+            android:background="@drawable/left_arrow"
+            android:textColor="@android:color/white" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circularPic"
+            android:layout_width="@dimen/height_55"
+            android:layout_height="@dimen/height_55"
+            android:layout_marginLeft="@dimen/height_5"
+            android:layout_marginTop="@dimen/height_15"
+            android:layout_toRightOf="@+id/txtBackArrow"
+            android:src="@drawable/profileimage"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="@dimen/height_2" />
+
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/height_8"
+            android:layout_marginTop="@dimen/height_20"
+            android:layout_toRightOf="@+id/circularPic"
+            android:text="Manoj kumar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtUsername"
+            android:layout_marginLeft="@dimen/height_8"
+            android:layout_toRightOf="@+id/circularPic"
+            android:text="Expire on: 13 Aug 2018"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/height_10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_10"
+            android:background="@drawable/border_for_navigation_drawer"
+            android:padding="@dimen/height_5">
+
+            <ImageView
+                android:id="@+id/imgHomeIcon"
+                android:layout_width="@dimen/height_30"
+                android:layout_height="@dimen/height_30"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/height_7"
+                android:background="@drawable/black_home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="@dimen/height_20"
+                android:layout_toRightOf="@+id/imgHomeIcon"
+                android:text="Home"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_25"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_10"
+            android:background="@drawable/border_for_navigation_drawer"
+            android:padding="@dimen/height_5">
+
+            <ImageView
+                android:id="@+id/imgExamIcon"
+                android:layout_width="@dimen/height_30"
+                android:layout_height="@dimen/height_30"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/height_7"
+                android:background="@drawable/black_home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="@dimen/height_20"
+                android:layout_toRightOf="@+id/imgExamIcon"
+                android:text="Exam History"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_25"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_10"
+            android:background="@drawable/border_for_navigation_drawer"
+            android:padding="@dimen/height_5">
+
+            <ImageView
+                android:id="@+id/imgFaqIcon"
+                android:layout_width="@dimen/height_30"
+                android:layout_height="@dimen/height_30"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/height_7"
+                android:background="@drawable/black_home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="@dimen/height_20"
+                android:layout_toRightOf="@+id/imgFaqIcon"
+                android:text="FAQ"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_25"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relTemAndCond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_10"
+            android:background="@drawable/border_for_navigation_drawer"
+            android:padding="@dimen/height_5">
+
+            <ImageView
+                android:id="@+id/imgTermIcon"
+                android:layout_width="@dimen/height_30"
+                android:layout_height="@dimen/height_30"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/height_7"
+                android:background="@drawable/black_home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="@dimen/height_20"
+                android:layout_toRightOf="@+id/imgTermIcon"
+                android:text="@string/term"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_25"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_10"
+            android:background="@drawable/border_for_navigation_drawer"
+            android:padding="@dimen/height_5">
+
+            <ImageView
+                android:id="@+id/imgPrivacyIcon"
+                android:layout_width="@dimen/height_30"
+                android:layout_height="@dimen/height_30"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/height_7"
+                android:background="@drawable/black_home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="@dimen/height_20"
+                android:layout_toRightOf="@+id/imgPrivacyIcon"
+                android:singleLine="true"
+                android:text="Privacy policy"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_25"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relAboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_10"
+            android:background="@drawable/border_for_navigation_drawer"
+            android:padding="@dimen/height_5">
+
+            <ImageView
+                android:id="@+id/imgAppVersionIcon"
+                android:layout_width="@dimen/height_30"
+                android:layout_height="@dimen/height_30"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/height_7"
+                android:background="@drawable/black_home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="@dimen/height_20"
+                android:layout_toRightOf="@+id/imgAppVersionIcon"
+                android:text="App V 1.0.0"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_25"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relTop"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/txtBackArrow"
+        android:layout_width="@dimen/height_32"
+        android:layout_height="@dimen/height_38"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/height_15"
+        android:background="@drawable/left_arrow"
+        android:textColor="@android:color/white"
+        android:textSize="26dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circularPic"
+        android:layout_width="@dimen/height_60"
+        android:layout_height="@dimen/height_60"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/height_10"
+        android:layout_toRightOf="@+id/txtBackArrow"
+        android:src="@drawable/profileimage"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="@dimen/height_2" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/height_10"
+        android:layout_marginTop="@dimen/height_10"
+        android:layout_toRightOf="@+id/circularPic"
+        android:singleLine="true"
+        android:text="PoliceBharati app"
+        android:textColor="@android:color/white"
+        android:textSize="26dp" />
+</RelativeLayout>

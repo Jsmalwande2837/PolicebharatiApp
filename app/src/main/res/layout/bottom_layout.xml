@@ -1,0 +1,239 @@
+<LinearLayout android:id="@+id/llBottom"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/relativeHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/relHome"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_4"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgHome"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/imgHomes"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage_blue"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txtHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relHome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_5"
+            android:text="Home"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/height_11" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/relProfile"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_4"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/imgProfiles"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage_blue"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txtProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relProfile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_5"
+            android:text="profile"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/height_11" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeAbout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/relAbout"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_4"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgAbout"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/imgAbouts"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage_blue"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txtAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relAbout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_5"
+            android:text="about"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/height_11" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeContact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/relContact"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_4"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgContact"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/imgContacts"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage_blue"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txtContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relContact"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_5"
+            android:text="Contact"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/height_11" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/relUpdate"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_4"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgUpdate"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/imgUpdates"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/homepage_blue"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txtUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relUpdate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_5"
+            android:text="Update"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/height_11" />
+    </RelativeLayout>
+
+</LinearLayout>

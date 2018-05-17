@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relTop"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@color/colorPrimary">
+
+
+    <RelativeLayout
+        android:id="@+id/relHamburger"
+        android:layout_width="45dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtHamburger"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/height_28"
+            android:layout_height="@dimen/height_28"
+            android:layout_marginLeft="@dimen/height_15"
+            android:background="@drawable/menu" />
+
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circularPic"
+        android:layout_width="@dimen/height_55"
+        android:layout_height="@dimen/height_55"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/height_10"
+        android:layout_toRightOf="@+id/relHamburger"
+        android:src="@drawable/profileimage"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="@dimen/height_2" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/height_10"
+        android:layout_marginTop="@dimen/height_10"
+        android:layout_toRightOf="@+id/circularPic"
+        android:singleLine="true"
+        android:text="PoliceBharati"
+        android:textColor="@android:color/white"
+        android:textSize="26dp" />
+
+    <TextView
+        android:layout_width="@dimen/height_25"
+        android:layout_height="@dimen/height_25"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/height_20"
+        android:background="@drawable/search"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="26dp" />
+</RelativeLayout>

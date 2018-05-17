@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGradient"
+    tools:context="com.solutionner.policebharatiapp.SimpleQuestionActivity">
+
+    <include
+        android:id="@+id/relTop"
+        layout="@layout/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_90" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llBottom"
+        android:layout_below="@+id/relTop"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="@dimen/height_10"
+            android:id="@+id/txtView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:gravity="center"
+            android:textColor="@color/colorblack"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/txtQue1"
+            android:padding="@dimen/height_10"
+            android:layout_width="match_parent"
+            android:text="Q. How do i use WhatsApp status?"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorblack"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <View
+            android:background="@color/colorblack"
+            android:layout_marginTop="@dimen/height_5"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"/>
+
+        <TextView
+            android:id="@+id/txtQue2"
+            android:padding="@dimen/height_10"
+            android:layout_width="match_parent"
+            android:text="Q. How do i backup,restore or transfer my WhatsApp Data?"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorblack"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <View
+            android:background="@color/colorblack"
+            android:layout_marginTop="@dimen/height_5"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"/>
+
+        <TextView
+            android:id="@+id/txtQue3"
+            android:padding="@dimen/height_10"
+            android:layout_width="match_parent"
+            android:text="Q. Why i can't connect WhatsApp?"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorblack"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <View
+            android:background="@color/colorblack"
+            android:layout_marginTop="@dimen/height_5"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"/>
+
+        <TextView
+            android:id="@+id/txtQue4"
+            android:padding="@dimen/height_10"
+            android:layout_width="match_parent"
+            android:text="Q. How can i fix problems with downloading and sendeing media files on WhatsApp?"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorblack"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <View
+            android:background="@color/colorblack"
+            android:layout_marginTop="@dimen/height_5"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"/>
+
+
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/llBottom"
+        layout="@layout/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_50"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
