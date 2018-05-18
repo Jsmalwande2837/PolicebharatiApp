@@ -65,6 +65,6 @@ public class AdhyayanSamagriActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnHistory)
     public void history() {
-        startActivity(new Intent(this, ResultActivity.class));
+        startActivity(new Intent(this, ExamMainActivity.class));
     }
 }

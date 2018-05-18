@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGradient"
+    tools:context=".AdhyayanSamagriActivity">
+
+    <include
+        android:id="@+id/relTop"
+        layout="@layout/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_90" />
+
+
+    <TextView
+        android:id="@+id/txtheading"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/relTop"
+        android:layout_height="@dimen/height_40"
+        android:layout_marginTop="@dimen/height_15"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="30dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llBottom"
+        android:layout_below="@+id/txtheading"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:layout_marginTop="@dimen/height_5"
+            android:background="@color/colorPrimary">
+
+
+            <ImageView
+                android:layout_width="@dimen/height_35"
+                android:layout_height="@dimen/height_35"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/height_15"
+                android:background="@drawable/black_home" />
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/height_10"
+                android:gravity="center"
+                android:text="01:59:00"
+                android:textColor="@android:color/white"
+                android:textSize="26dp"
+                tools:ignore="RtlCompat" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_10">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circularCongrats"
+                android:layout_width="@dimen/height_70"
+                android:layout_height="@dimen/height_70"
+                android:layout_marginLeft="@dimen/height_20"
+                android:layout_marginTop="@dimen/height_10"
+                android:src="@drawable/profileimage"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="@dimen/height_2" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginTop="@dimen/height_20"
+                android:layout_toRightOf="@+id/circularCongrats"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/txtuserName"
+                android:layout_below="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_toRightOf="@+id/circularCongrats"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Santosh"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                tools:ignore="RtlCompat" />
+
+
+            <LinearLayout
+                android:id="@+id/llCongrats"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/circularCongrats"
+                android:layout_marginLeft="@dimen/height_15"
+                android:layout_marginRight="@dimen/height_20"
+                android:layout_marginTop="@dimen/height_5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/txtCongrats"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_40"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtResult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/height_40"
+                        android:layout_alignParentEnd="true"
+                        android:text="188/200"
+                        android:textColor="@android:color/black"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/height_40"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/txtResult"
+                        android:layout_marginRight="@dimen/height_30"
+                        android:text="Score"
+                        android:textColor="@android:color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/llBottom"
+        layout="@layout/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_50"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

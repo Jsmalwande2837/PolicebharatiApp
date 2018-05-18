@@ -1,8 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExamMainActivity">
+    android:background="@color/colorGradient"
+    tools:context=".AdhyayanSamagriActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        android:id="@+id/relTop"
+        layout="@layout/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_90" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_80"
+        android:layout_below="@+id/relTop"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="@dimen/height_5">
+
+
+        <ImageView
+            android:layout_width="@dimen/height_35"
+            android:background="@drawable/black_home"
+            android:layout_centerInParent="true"
+            android:layout_height="@dimen/height_35" />
+
+        <Button
+            android:id="@+id/txtheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/height_10"
+            android:background="@color/colorGray"
+            android:gravity="center"
+            android:padding="@dimen/height_8"
+            android:paddingLeft="@dimen/height_5"
+            android:paddingRight="@dimen/height_5"
+            android:text="1/200"
+            android:textColor="@android:color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/height_40"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/height_35"
+            android:layout_marginTop="@dimen/height_5"
+            android:gravity="center"
+            android:text="01:59:00"
+            android:textColor="@android:color/white"
+            android:textSize="26dp"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/height_35"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/txtTime"
+            android:layout_marginRight="@dimen/height_35"
+            android:background="@color/colorGray"
+            android:gravity="center"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/height_18"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/llBottom"
+        layout="@layout/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_50"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
