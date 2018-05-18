@@ -14,27 +14,28 @@
         android:layout_height="@dimen/height_90" />
 
     <RelativeLayout
+        android:id="@+id/relResult"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_80"
         android:layout_below="@+id/relTop"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="@dimen/height_5">
+        android:layout_marginTop="@dimen/height_5"
+        android:background="@color/colorPrimary">
 
 
         <ImageView
             android:layout_width="@dimen/height_35"
-            android:background="@drawable/filled_heart"
+            android:layout_height="@dimen/height_35"
             android:layout_centerInParent="true"
-            android:layout_height="@dimen/height_35" />
+            android:background="@drawable/filled_heart" />
 
         <Button
             android:id="@+id/txtheading"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/height_10"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:background="@color/colorGray"
             android:gravity="center"
-            android:padding="@dimen/height_8"
             android:paddingLeft="@dimen/height_5"
             android:paddingRight="@dimen/height_5"
             android:text="1/200"
@@ -44,7 +45,7 @@
         <TextView
             android:id="@+id/txtTime"
             android:layout_width="100dp"
-            android:layout_height="@dimen/height_40"
+            android:layout_height="@dimen/height_35"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="@dimen/height_35"
             android:layout_marginTop="@dimen/height_5"
@@ -57,10 +58,10 @@
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="100dp"
-            android:layout_height="@dimen/height_35"
+            android:layout_height="@dimen/height_40"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="5dp"
             android:layout_below="@+id/txtTime"
+            android:layout_marginBottom="5dp"
             android:layout_marginRight="@dimen/height_35"
             android:background="@color/colorGray"
             android:gravity="center"
@@ -69,6 +70,166 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/height_18"
             android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llBottom"
+        android:layout_below="@+id/relResult"
+        android:layout_marginBottom="@dimen/height_15"
+        android:layout_marginLeft="@dimen/height_10"
+        android:layout_marginRight="@dimen/height_10">
+
+
+        <TextView
+            android:id="@+id/txtQueNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_15"
+            android:text="Que 1."
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/height_20" />
+
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_80"
+            android:layout_marginLeft="@dimen/height_10"
+            android:layout_marginTop="@dimen/height_15"
+            android:layout_toRightOf="@+id/txtQueNumber"
+            android:maxLines="3"
+            android:text="Who is the president of india ? "
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/height_20" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtQuestion"
+            android:layout_marginTop="@dimen/height_10">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="@color/colorPrimary"
+                android:checked="false"
+                android:layoutDirection="ltr"
+                android:text="A. Ram Nath Kovind"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_20" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:buttonTint="@color/colorPrimary"
+                android:layoutDirection="ltr"
+                android:text="B. Narendra Modi"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_20" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:buttonTint="@color/colorPrimary"
+                android:layoutDirection="ltr"
+                android:text="C. Sonia Gandhi"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_20" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:buttonTint="@color/colorPrimary"
+                android:layoutDirection="ltr"
+                android:text="D. Atal Bihari Vajpayee"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/height_20" />
+
+        </RadioGroup>
+
+
+        <RelativeLayout
+            android:id="@+id/llFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_toLeftOf="@+id/btnSecond"
+                android:background="@drawable/leftheaded"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/btnSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_toLeftOf="@+id/viewEmpty"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="@dimen/height_15"
+                android:paddingRight="@dimen/height_15"
+                android:text="Previous"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/viewEmpty"
+                android:layout_width="20dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/height_10" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/viewEmpty"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="@dimen/height_15"
+                android:paddingRight="@dimen/height_15"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@+id/btnNext"
+                android:background="@drawable/rigthheaded"
+                android:textColor="@android:color/white"
+                android:textSize="40dp" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
