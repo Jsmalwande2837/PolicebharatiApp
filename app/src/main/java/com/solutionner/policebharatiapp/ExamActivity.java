@@ -19,7 +19,6 @@ public class ExamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exam);
 
         ButterKnife.inject(this);
-
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/marathi_font_file.ttf");
         textStudy.setTypeface(tf);
         textStudy.setText("ध्यान से पढ़िए !");

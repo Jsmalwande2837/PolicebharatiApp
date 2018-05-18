@@ -24,6 +24,6 @@ public class ExamMainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnSubmit)
     public void Submit() {
-        startActivity(new Intent(this, ResultActivity.class));
+        startActivity(new Intent(this, ExamResultActivity.class));
     }
 }

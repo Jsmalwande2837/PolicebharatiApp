@@ -43,17 +43,18 @@
 
 
             <ImageView
-                android:layout_width="@dimen/height_35"
-                android:layout_height="@dimen/height_35"
+                android:layout_width="@dimen/height_30"
+                android:layout_height="@dimen/height_30"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/height_15"
-                android:background="@drawable/black_home" />
+                android:background="@drawable/right_arrow" />
 
             <TextView
-                android:id="@+id/txtTime"
-                android:layout_width="100dp"
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/height_10"
                 android:gravity="center"
@@ -64,100 +65,74 @@
 
         </RelativeLayout>
 
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="@dimen/height_10"/>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/height_10">
+            android:padding="@dimen/height_5">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circularCongrats"
                 android:layout_width="@dimen/height_70"
                 android:layout_height="@dimen/height_70"
-                android:layout_marginLeft="@dimen/height_20"
-                android:layout_marginTop="@dimen/height_10"
+                android:layout_marginLeft="@dimen/height_5"
+                android:layout_marginTop="@dimen/height_5"
                 android:src="@drawable/profileimage"
                 app:civ_border_color="@color/colorPrimary"
                 app:civ_border_width="@dimen/height_2" />
 
             <TextView
-                android:id="@+id/txtDate"
+                android:id="@+id/txtFullDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_25"
-                android:layout_marginTop="@dimen/height_20"
+                android:layout_marginLeft="@dimen/height_10"
+                android:layout_marginTop="@dimen/height_10"
                 android:layout_toRightOf="@+id/circularCongrats"
                 android:gravity="center"
                 android:text=""
                 android:textColor="@android:color/black"
-                android:textSize="20dp" />
+                android:textSize="@dimen/height_25" />
 
             <TextView
-                android:id="@+id/txtuserName"
-                android:layout_below="@+id/txtDate"
+                android:id="@+id/txtTime"
+                android:layout_below="@+id/txtFullDate"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginLeft="@dimen/height_10"
                 android:layout_toRightOf="@+id/circularCongrats"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Santosh"
                 android:textColor="@android:color/black"
-                android:textSize="16dp"
+                android:textSize="@dimen/height_20"
                 tools:ignore="RtlCompat" />
 
 
-            <LinearLayout
-                android:id="@+id/llCongrats"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@+id/circularCongrats"
-                android:layout_marginLeft="@dimen/height_15"
-                android:layout_marginRight="@dimen/height_20"
+            <TextView
+                android:id="@+id/txtResult"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_40"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_marginTop="@dimen/height_5"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:id="@+id/txtCongrats"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/height_40"
-                    android:layout_weight="1"
-                    android:gravity="center|left"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
-
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/txtResult"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/height_40"
-                        android:layout_alignParentEnd="true"
-                        android:text="188/200"
-                        android:textColor="@android:color/black"
-                        android:textSize="30dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/height_40"
-                        android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/txtResult"
-                        android:layout_marginRight="@dimen/height_30"
-                        android:text="Score"
-                        android:textColor="@android:color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
-            </LinearLayout>
+                android:layout_marginRight="@dimen/height_15"
+                android:text="188/200"
+                android:textColor="@android:color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="@dimen/height_5"/>
 
     </LinearLayout>
 
