@@ -75,7 +75,7 @@
                 android:layout_height="@dimen/height_30"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/height_7"
-                android:background="@drawable/black_home" />
+                android:background="@drawable/home" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                 android:layout_height="@dimen/height_30"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/height_7"
-                android:background="@drawable/black_home" />
+                android:background="@drawable/test" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -134,7 +134,7 @@
                 android:layout_height="@dimen/height_30"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/height_7"
-                android:background="@drawable/black_home" />
+                android:background="@drawable/question_mark" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                 android:layout_height="@dimen/height_30"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/height_7"
-                android:background="@drawable/black_home" />
+                android:background="@drawable/bad_grades" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -194,7 +194,7 @@
                 android:layout_height="@dimen/height_30"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/height_7"
-                android:background="@drawable/black_home" />
+                android:background="@drawable/shield_with_lock" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -225,7 +225,7 @@
                 android:layout_height="@dimen/height_30"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/height_7"
-                android:background="@drawable/black_home" />
+                android:background="@drawable/cloud_computing" />
 
             <TextView
                 android:layout_width="match_parent"

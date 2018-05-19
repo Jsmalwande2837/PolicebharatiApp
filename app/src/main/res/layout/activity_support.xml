@@ -33,8 +33,8 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/height_50"
             android:layout_centerInParent="true"
-            android:text=" "
             android:gravity="center"
+            android:text=" "
             android:textColor="@color/colorblack"
             android:textSize="40dp" />
 
@@ -43,8 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_50"
             android:layout_toRightOf="@+id/txtEmpty"
-            android:text="(support)"
             android:gravity="center|left"
+            android:text="(support)"
             android:textColor="@color/colorblack"
             android:textSize="30dp" />
     </RelativeLayout>
@@ -68,7 +68,7 @@
                 android:id="@+id/imgMobile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/black_mobile" />
+                android:src="@drawable/office_telephone" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                 android:id="@+id/imgMail"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/black_mobile" />
+                android:src="@drawable/close_envelope" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -119,7 +119,7 @@
                 android:id="@+id/imgLocation"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/black_mobile" />
+                android:src="@drawable/placeholder" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -144,7 +144,7 @@
                 android:id="@+id/imgWebsite"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/black_mobile" />
+                android:src="@drawable/grid_world" />
 
             <TextView
                 android:layout_width="match_parent"

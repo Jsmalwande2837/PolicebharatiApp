@@ -70,7 +70,7 @@
                 android:id="@+id/imgProfile"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/homepage"
+                android:background="@drawable/user"
                 android:visibility="visible" />
 
 
@@ -116,7 +116,7 @@
                 android:id="@+id/imgAbout"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/homepage"
+                android:background="@drawable/info_circle"
                 android:visibility="visible" />
 
 
@@ -162,7 +162,7 @@
                 android:id="@+id/imgContact"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/homepage"
+                android:background="@drawable/call_answer"
                 android:visibility="visible" />
 
 
@@ -209,7 +209,7 @@
                 android:id="@+id/imgUpdate"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/homepage"
+                android:background="@drawable/refresh_button"
                 android:visibility="visible" />
 
 

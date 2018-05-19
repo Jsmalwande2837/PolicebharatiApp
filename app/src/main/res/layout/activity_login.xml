@@ -53,8 +53,8 @@
                 android:id="@+id/layout_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
+                android:layout_marginLeft="@dimen/height_15"
+                android:layout_marginRight="@dimen/height_15"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
@@ -62,7 +62,7 @@
                     android:layout_width="29dp"
                     android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/black_user" />
+                    android:src="@drawable/phone_receiver" />
 
                 <EditText
                     android:id="@+id/edtName"
@@ -70,11 +70,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="NAME"
+                    android:hint="MOBILENO"
                     android:imeOptions="actionNext"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
@@ -87,8 +87,8 @@
                 android:id="@+id/layout_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
+                android:layout_marginLeft="@dimen/height_15"
+                android:layout_marginRight="@dimen/height_15"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
@@ -96,7 +96,7 @@
                     android:layout_width="29dp"
                     android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/black_user" />
+                    android:src="@drawable/lockie" />
 
                 <EditText
                     android:id="@+id/edtMobile"
@@ -104,11 +104,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="MOBILENO"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:hint="PASSWORD"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
@@ -127,7 +127,7 @@
                 android:paddingLeft="@dimen/height_15"
                 android:paddingRight="@dimen/height_15"
                 android:text="Login"
-                android:textAllCaps="true"
+                android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="27dp" />
 

@@ -76,7 +76,7 @@
                     android:layout_width="29dp"
                     android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/black_user" />
+                    android:src="@drawable/user_black" />
 
                 <EditText
                     android:id="@+id/edtName"
@@ -110,7 +110,7 @@
                     android:layout_width="29dp"
                     android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/black_user" />
+                    android:src="@drawable/phone_receiver" />
 
                 <EditText
                     android:id="@+id/edtMobile"
@@ -144,7 +144,7 @@
                     android:layout_width="29dp"
                     android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/email" />
+                    android:src="@drawable/buildings" />
 
                 <EditText
                     android:id="@+id/edtCity"
@@ -178,7 +178,7 @@
                     android:layout_width="29dp"
                     android:layout_height="29dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/phone" />
+                    android:src="@drawable/home" />
 
                 <EditText
                     android:id="@+id/edtAddress"
