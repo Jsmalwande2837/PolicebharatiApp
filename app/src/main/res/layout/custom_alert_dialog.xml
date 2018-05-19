@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_centerInParent="true">
+
+
+    <TextView
+        android:id="@+id/txtCancel"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/height_15"
+        android:layout_marginTop="@dimen/height_10"
+        android:gravity="center_horizontal"
+        android:background="@drawable/cancel"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/txttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCancel"
+        android:layout_marginTop="@dimen/height_10"
+        android:gravity="center_horizontal"
+        android:text="Are you Sure ?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorblack"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txttitle"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/height_20"
+        android:gravity="center"
+        android:text="Ok"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/height_18" />
+
+
+</RelativeLayout>
