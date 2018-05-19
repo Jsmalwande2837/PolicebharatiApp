@@ -196,7 +196,7 @@
                 android:paddingRight="@dimen/height_10"
                 android:paddingTop="@dimen/height_3"
                 android:text="Register"
-                android:textAllCaps="true"
+                android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="30dp" />
         </LinearLayout>

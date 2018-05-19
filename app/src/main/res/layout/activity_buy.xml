@@ -68,7 +68,7 @@
             android:paddingLeft="@dimen/height_15"
             android:paddingRight="@dimen/height_15"
             android:paddingTop="@dimen/height_5"
-            android:text="Buy now!"
+            android:text="Buy now !"
             android:textAllCaps="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white"

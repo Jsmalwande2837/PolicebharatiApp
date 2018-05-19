@@ -2,4 +2,8 @@
     <string name="app_name">PolicebharatiApp</string>
     <string name="term"> T &amp; C</string>
 
+    <string name="crash_toast_text">Ooooops ! I crashed, but a report has been sent to my developer to help fix the issue !</string>
+    <string name="error_server">Something wrong at server, please try again later.</string>
+    <string name="error_internet">Please check your internet connection.</string>
+    <string name="error_netconnection">Please check your internet connection!!!</string>
 </resources>
