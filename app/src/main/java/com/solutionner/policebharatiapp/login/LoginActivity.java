@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.login;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.register.RegisterActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

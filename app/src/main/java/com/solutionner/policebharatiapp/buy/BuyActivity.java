@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.buy;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.aboutus.AboutUsActivity;
+import com.solutionner.policebharatiapp.adhyayansamgri.AdhyayanSamagriActivity;
+import com.solutionner.policebharatiapp.term.TermAndCondActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.result;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -7,12 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.activity.ExamHistoryActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class ExamResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity {
 
     @InjectView(R.id.txtheading)
     TextView txtheading;

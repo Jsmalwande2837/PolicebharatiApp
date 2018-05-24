@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.term;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,18 +10,21 @@ import com.solutionner.policebharatiapp.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class SupportActivity extends AppCompatActivity {
-    @InjectView(R.id.txtSupport)
-    TextView txtSupport;
+public class TermAndCondActivity extends AppCompatActivity {
+
+    @InjectView(R.id.textStudy)
+    TextView textStudy;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_support);
+        setContentView(R.layout.activity_term_and_cond);
+
         ButterKnife.inject(this);
 
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/marathi_font_file.ttf");
-        txtSupport.setTypeface(tf);
-        txtSupport.setText("समर्थन");
+        textStudy.setTypeface(tf);
+        textStudy.setText("नियम और शर्तें");
 
     }
 }

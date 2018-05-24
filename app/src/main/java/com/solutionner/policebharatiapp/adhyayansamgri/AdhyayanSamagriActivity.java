@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.adhyayansamgri;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.activity.ExamMainActivity;
+import com.solutionner.policebharatiapp.activity.SimpleQuestionActivity;
+import com.solutionner.policebharatiapp.generalknowledge.GenaralKnowledgeActivity;
+import com.solutionner.policebharatiapp.profile.ProfileActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

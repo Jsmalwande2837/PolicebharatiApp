@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.generalknowledge;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import com.solutionner.policebharatiapp.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class GopniyataActivity extends AppCompatActivity {
+public class GenaralKnowledgeActivity extends AppCompatActivity {
 
     @InjectView(R.id.textStudy)
     TextView textStudy;
@@ -18,7 +18,7 @@ public class GopniyataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gopniyata);
+        setContentView(R.layout.activity_genaral_knowledge);
 
         ButterKnife.inject(this);
 

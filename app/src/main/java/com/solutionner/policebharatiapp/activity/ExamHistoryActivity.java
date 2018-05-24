@@ -24,7 +24,7 @@ public class ExamHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam_result);
+        setContentView(R.layout.activity_exam_history);
         ButterKnife.inject(this);
 
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/marathi_font_file.ttf");

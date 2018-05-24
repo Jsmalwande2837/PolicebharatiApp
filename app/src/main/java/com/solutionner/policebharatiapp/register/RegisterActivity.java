@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.register;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.otp.OTPActivity;
+import com.solutionner.policebharatiapp.profile.ProfileActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.support;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,20 +10,18 @@ import com.solutionner.policebharatiapp.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class ExamActivity extends AppCompatActivity {
-
-    @InjectView(R.id.textStudy)
-    TextView textStudy;
-
+public class SupportActivity extends AppCompatActivity {
+    @InjectView(R.id.txtSupport)
+    TextView txtSupport;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam);
-
+        setContentView(R.layout.activity_support);
         ButterKnife.inject(this);
+
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/marathi_font_file.ttf");
-        textStudy.setTypeface(tf);
-        textStudy.setText("ध्यान से पढ़िए !");
+        txtSupport.setTypeface(tf);
+        txtSupport.setText("समर्थन");
 
     }
 }

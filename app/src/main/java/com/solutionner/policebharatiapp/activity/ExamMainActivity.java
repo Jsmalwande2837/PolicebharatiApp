@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.result.ResultActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -26,7 +27,7 @@ public class ExamMainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnSubmit)
     public void Submit() {
-        startActivity(new Intent(this, ExamResultActivity.class));
+        startActivity(new Intent(this, ResultActivity.class));
     }
 
     @OnClick(R.id.btnNext)

@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp.activity;
+package com.solutionner.policebharatiapp.profile;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
