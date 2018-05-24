@@ -1,9 +1,11 @@
 package com.solutionner.policebharatiapp.application;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.multidex.MultiDexApplication;
+import android.util.Log;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
@@ -29,7 +31,7 @@ import org.acra.annotation.ReportsCrashes;
         mode = ReportingInteractionMode.TOAST,
         resToastText = R.string.crash_toast_text)
 
-public class HospitalApplication extends MultiDexApplication {
+public class PoliceBharatiApplication extends MultiDexApplication {
 
     private static Context mContext;
     private static SharedPreferences mSharedPreferences;
@@ -40,6 +42,29 @@ public class HospitalApplication extends MultiDexApplication {
         //ACRA.init(this);
         mContext = getApplicationContext();
         mSharedPreferences = mContext.getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+
+            @Override
+            public void uncaughtException(Thread thread, Throwable ex) {
+                handleUncaughtException(thread, ex);
+
+            }
+        });
+    }
+
+    public void handleUncaughtException(Thread thread, Throwable e) {
+        String stackTrace = Log.getStackTraceString(e);
+        String message = e.getMessage();
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("message/rfc822");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"malwandejitesh@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "MyApp Crash log file");
+        intent.putExtra(Intent.EXTRA_TEXT, stackTrace);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // required when starting from Application
+        startActivity(intent);
+
+
     }
 
 

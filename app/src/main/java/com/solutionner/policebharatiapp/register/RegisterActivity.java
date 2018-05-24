@@ -3,6 +3,7 @@ package com.solutionner.policebharatiapp.register;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -29,6 +30,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.inject(this);
+        init();
+    }
+
+    private void init() {
+
+        edtName.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
     }
 
     @OnClick(R.id.BtnRegister)

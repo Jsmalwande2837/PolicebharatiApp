@@ -106,7 +106,7 @@
                     android:background="@drawable/border_for_bottom_lineview"
                     android:hint="PASSWORD"
                     android:imeOptions="actionDone"
-                    android:inputType="textPassword"
+                    android:inputType="textPassword|textCapSentences"
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textAllCaps="true"
