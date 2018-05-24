@@ -11,7 +11,7 @@
         android:id="@+id/relTop"
         layout="@layout/top_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_90" />
+        android:layout_height="@dimen/height_80" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

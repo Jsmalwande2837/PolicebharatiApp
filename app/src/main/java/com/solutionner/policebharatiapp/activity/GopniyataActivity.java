@@ -1,14 +1,16 @@
-package com.solutionner.policebharatiapp;
+package com.solutionner.policebharatiapp.activity;
 
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.solutionner.policebharatiapp.R;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class AboutUsActivity extends AppCompatActivity {
+public class GopniyataActivity extends AppCompatActivity {
 
     @InjectView(R.id.textStudy)
     TextView textStudy;
@@ -16,13 +18,13 @@ public class AboutUsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+        setContentView(R.layout.activity_gopniyata);
 
         ButterKnife.inject(this);
 
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/marathi_font_file.ttf");
         textStudy.setTypeface(tf);
-        textStudy.setText("हमारे बारे में");
+        textStudy.setText("गोपनीयता नीति");
 
     }
 }

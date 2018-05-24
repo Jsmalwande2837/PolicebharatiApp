@@ -12,7 +12,7 @@
         android:id="@+id/relTop"
         layout="@layout/top_layout_with_search"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_90" />
+        android:layout_height="@dimen/height_80" />
 
     <RelativeLayout
         android:id="@+id/relTab"

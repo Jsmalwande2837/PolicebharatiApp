@@ -1,10 +1,12 @@
-package com.solutionner.policebharatiapp;
+package com.solutionner.policebharatiapp.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.WindowManager;
+
+import com.solutionner.policebharatiapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

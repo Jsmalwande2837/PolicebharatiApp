@@ -1,4 +1,4 @@
-package com.solutionner.policebharatiapp;
+package com.solutionner.policebharatiapp.activity;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -9,8 +9,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.solutionner.policebharatiapp.R;
+
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {

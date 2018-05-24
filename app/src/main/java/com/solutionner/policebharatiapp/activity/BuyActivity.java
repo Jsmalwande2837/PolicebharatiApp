@@ -1,14 +1,13 @@
-package com.solutionner.policebharatiapp;
+package com.solutionner.policebharatiapp.activity;
 
-import android.app.Dialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.solutionner.policebharatiapp.R;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

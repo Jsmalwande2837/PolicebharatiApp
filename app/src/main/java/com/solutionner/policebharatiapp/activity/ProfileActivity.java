@@ -1,7 +1,9 @@
-package com.solutionner.policebharatiapp;
+package com.solutionner.policebharatiapp.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.solutionner.policebharatiapp.R;
 
 public class ProfileActivity extends AppCompatActivity {
 
