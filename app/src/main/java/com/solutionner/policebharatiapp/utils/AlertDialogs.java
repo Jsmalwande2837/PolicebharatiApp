@@ -1,19 +1,38 @@
 package com.solutionner.policebharatiapp.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-public class Alert {
-    public static Alert mInstance;
+public class AlertDialogs {
 
-    public static Alert getInstance() {
+    private ProgressDialog mDialog;
+    public static AlertDialogs mInstance;
+
+    public static AlertDialogs getInstance() {
         if (mInstance == null) {
-            mInstance = new Alert();
+            mInstance = new AlertDialogs();
         }
         return mInstance;
     }
+
+    public void onShowProgressDialog(Activity activity, boolean isShow) {
+
+        try {
+            if (isShow) {
+                mDialog = ProgressDialog.show(activity, "", "Loading...", true);
+                mDialog.show();
+            } else {
+                if (mDialog.isShowing())
+                    mDialog.dismiss();
+            }
+        } catch (Exception e) {
+
+        }
+    }
+
 
     public void onShowToastNotification(Activity activity, String msg) {
         Toast ltoast = Toast.makeText(activity, msg, Toast.LENGTH_LONG);
@@ -26,5 +45,4 @@ public class Alert {
 
         imm.hideSoftInputFromWindow(mActivity.getCurrentFocus().getWindowToken(), 0);
     }
-
 }

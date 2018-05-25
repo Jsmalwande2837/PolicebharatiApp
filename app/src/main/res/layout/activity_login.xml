@@ -65,7 +65,7 @@
                     android:src="@drawable/phone_receiver" />
 
                 <EditText
-                    android:id="@+id/edtName"
+                    android:id="@+id/edtMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -99,7 +99,7 @@
                     android:src="@drawable/lockie" />
 
                 <EditText
-                    android:id="@+id/edtMobile"
+                    android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -159,8 +159,8 @@
                     android:layout_weight="0.5"
                     android:gravity="left"
                     android:text="Create account"
-                    android:textSize="@dimen/height_20"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/height_20" />
 
             </LinearLayout>
 
@@ -171,8 +171,8 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:text="Forgot password?"
-                android:textSize="@dimen/height_20"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/height_20" />
 
         </LinearLayout>
 

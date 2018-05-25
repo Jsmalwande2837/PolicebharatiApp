@@ -42,7 +42,7 @@
         android:layout_below="@+id/circularPicProfile">
 
         <Button
-            android:id="@+id/BtnEdit"
+            android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_above="@+id/llmain"
@@ -69,7 +69,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/height_10"
                 android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -88,7 +87,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
@@ -103,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/height_10"
                 android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -122,7 +121,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
@@ -137,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/height_10"
                 android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -156,7 +155,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
@@ -171,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/height_10"
                 android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -190,7 +189,7 @@
                     android:imeOptions="actionDone"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
@@ -198,6 +197,40 @@
                     android:textCursorDrawable="@null" />
 
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/height_10"
+                android:layout_marginRight="@dimen/height_10"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/lockie" />
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/border_for_bottom_lineview"
+                    android:hint="PASSWORD"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword|textCapSentences"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textCursorDrawable="@null" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

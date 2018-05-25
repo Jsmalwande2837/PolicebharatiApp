@@ -25,11 +25,11 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circularPicProfile"
-        android:layout_width="@dimen/height_90"
-        android:layout_height="@dimen/height_90"
+        android:layout_width="@dimen/height_75"
+        android:layout_height="@dimen/height_75"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/height_55"
+        android:layout_marginTop="@dimen/height_50"
         android:src="@drawable/profileimage"
         app:civ_border_color="@color/colorPrimary"
         app:civ_border_width="@dimen/height_2" />
@@ -41,171 +41,214 @@
         android:layout_above="@+id/llBottom"
         android:layout_below="@+id/circularPicProfile">
 
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical"
-            android:padding="@dimen/height_10">
+            android:layout_centerInParent="true">
 
             <LinearLayout
-                android:id="@+id/layout_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/user_black" />
-
-                <EditText
-                    android:id="@+id/edtName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="NAME"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textAllCaps="true"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
-                    android:textCursorDrawable="@null" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_mobile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/phone_receiver" />
-
-                <EditText
-                    android:id="@+id/edtMobile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="MOBILENO"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textAllCaps="true"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
-                    android:textCursorDrawable="@null" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_city"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/buildings" />
-
-                <EditText
-                    android:id="@+id/edtCity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="CITY"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textAllCaps="true"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
-                    android:textCursorDrawable="@null" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/home" />
-
-                <EditText
-                    android:id="@+id/edtAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="ADDRESS"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textAllCaps="true"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
-                    android:textCursorDrawable="@null" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/BtnRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/blue_button_border"
-                android:paddingBottom="@dimen/height_3"
+                android:orientation="vertical"
                 android:paddingLeft="@dimen/height_10"
-                android:paddingRight="@dimen/height_10"
-                android:paddingTop="@dimen/height_3"
-                android:text="Register"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="30dp" />
-        </LinearLayout>
+                android:paddingBottom="@dimen/height_5"
+                android:paddingRight="@dimen/height_10">
+
+                <LinearLayout
+                    android:id="@+id/layout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/height_10"
+                    android:layout_marginRight="@dimen/height_10"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/user_black" />
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_for_bottom_lineview"
+                        android:hint="NAME"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textCursorDrawable="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/height_10"
+                    android:layout_marginRight="@dimen/height_10"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/phone_receiver" />
+
+                    <EditText
+                        android:id="@+id/edtMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_for_bottom_lineview"
+                        android:hint="MOBILENO"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textCursorDrawable="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/height_10"
+                    android:layout_marginRight="@dimen/height_10"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/buildings" />
+
+                    <EditText
+                        android:id="@+id/edtCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_for_bottom_lineview"
+                        android:hint="CITY"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textCursorDrawable="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/height_10"
+                    android:layout_marginRight="@dimen/height_10"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/home" />
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_for_bottom_lineview"
+                        android:hint="ADDRESS"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textCursorDrawable="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/height_10"
+                    android:layout_marginRight="@dimen/height_10"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/lockie" />
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_for_bottom_lineview"
+                        android:hint="PASSWORD"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword|textCapSentences"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textCursorDrawable="@null" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/BtnRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/blue_button_border"
+                    android:paddingBottom="@dimen/height_3"
+                    android:paddingLeft="@dimen/height_10"
+                    android:paddingRight="@dimen/height_10"
+                    android:paddingTop="@dimen/height_3"
+                    android:text="Register"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
 
     </RelativeLayout>
 
-    <include layout="@layout/bottom_layout"
+    <include
         android:id="@+id/llBottom"
-        android:layout_alignParentBottom="true"
+        layout="@layout/bottom_layout"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/height_50"
-        android:layout_width="match_parent"/>
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
