@@ -65,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
         edtAddress.setEnabled(false);
         edtPassword.setEnabled(false);
 
+        //Call Get USer Api
         CallGetUserDataApi(PoliceBharatiApplication.onGetUserId());
     }
 
