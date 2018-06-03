@@ -48,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initObjects() {
         mAlert = AlertDialogs.getInstance();
+        mAlert.firebaseAnalytics(this.getClass().getSimpleName());
         loginServiceProvider = new LoginServiceProvider(this);
     }
 

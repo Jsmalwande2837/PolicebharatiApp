@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
+import android.util.Log;
 import android.widget.EditText;
 
+import com.google.firebase.crash.FirebaseCrash;
 import com.solutionner.policebharatiapp.R;
 import com.solutionner.policebharatiapp.application.PoliceBharatiApplication;
-import com.solutionner.policebharatiapp.otp.OTPActivity;
 import com.solutionner.policebharatiapp.profile.getprofile.GetProfileModel;
 import com.solutionner.policebharatiapp.profile.getprofile.GetProfileServiceProvider;
 import com.solutionner.policebharatiapp.profile.updateprofile.UpdateProfileModel;
@@ -46,6 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
     GetProfileServiceProvider getProfileServiceProvider;
     private String getName, getMobile, getCity, getAddress, getPassword;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +58,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void initObjects() {
         mAlert = AlertDialogs.getInstance();
+        mAlert.firebaseAnalytics(this.getClass().getSimpleName());
         updateProfileServiceProvider = new UpdateProfileServiceProvider(this);
         getProfileServiceProvider = new GetProfileServiceProvider(this);
 

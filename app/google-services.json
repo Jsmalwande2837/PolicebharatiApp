@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "744102711071",
+    "firebase_url": "https://policebharatiapp.firebaseio.com",
+    "project_id": "policebharatiapp",
+    "storage_bucket": "policebharatiapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744102711071:android:9a7c11801facdd02",
+        "android_client_info": {
+          "package_name": "com.solutionner.policebharatiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744102711071-9873mi9pe51007ugs84nv9hb490j64i2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solutionner.policebharatiapp",
+            "certificate_hash": "8658fa1360d2df8ac79d6d4d6232a2dea256a719"
+          }
+        },
+        {
+          "client_id": "744102711071-hbb6je1mm1jv4394oq6p5hdbnf2lgvs3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "744102711071-hbb6je1mm1jv4394oq6p5hdbnf2lgvs3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCtrNXBVkaqG_oKPl114GCnnHR0VpsmTE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744102711071-hbb6je1mm1jv4394oq6p5hdbnf2lgvs3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,8 +3,11 @@ package com.solutionner.policebharatiapp.utils;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import com.google.firebase.crash.FirebaseCrash;
 
 public class AlertDialogs {
 
@@ -44,5 +47,11 @@ public class AlertDialogs {
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
 
         imm.hideSoftInputFromWindow(mActivity.getCurrentFocus().getWindowToken(), 0);
+    }
+
+    public void firebaseAnalytics(String activityName) {
+        FirebaseCrash.logcat(Log.ERROR, activityName, "firebase crash analytics");
+        Throwable ex = null;
+        FirebaseCrash.report(ex);
     }
 }
