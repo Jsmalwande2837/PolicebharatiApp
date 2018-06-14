@@ -12,8 +12,7 @@ import retrofit2.http.POST;
  */
 
 public interface ForgotPasswordService {
-    @POST("submitRatings")
+    @POST("forgot_password.php")
     @FormUrlEncoded
-    Call<ForgotPasswordModel> ForgotPasswordApi(@Field("Name") String Name,
-                                                @Field("Mobile") String Mobile);
+    Call<ForgotPasswordModel> ForgotPasswordApi(@Field("Mobile") String Mobile);
 }

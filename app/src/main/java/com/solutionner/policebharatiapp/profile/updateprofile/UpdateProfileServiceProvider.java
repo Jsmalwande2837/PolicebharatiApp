@@ -22,9 +22,9 @@ public class UpdateProfileServiceProvider {
         updateProfileService = APIServiceFactory.createService(UpdateProfileService.class, context);
     }
 
-    public void CallUpdate(String name, String mobile, String city, String address, String password, final APICallback apiCallback) {
+    public void CallUpdate(String userId, String Name, String city, String address, String password, final APICallback apiCallback) {
         Call<UpdateProfileModel> call = null;
-        call = updateProfileService.UpdateApi(name, mobile, city, address, password);
+        call = updateProfileService.UpdateApi(userId, Name, city, address, password);
         String url = call.request().url().toString();
 
         call.enqueue(new Callback<UpdateProfileModel>() {
@@ -32,7 +32,7 @@ public class UpdateProfileServiceProvider {
             public void onResponse(Call<UpdateProfileModel> call, Response<UpdateProfileModel> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 200) {
                     apiCallback.onSuccess(response.body());
-                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 500) {
+                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 404) {
                     apiCallback.onSuccess(response.body());
                 } else {
                     BaseServiceResponseModel model = ErrorUtils.parseError(response);

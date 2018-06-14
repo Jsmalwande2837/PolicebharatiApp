@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.crash.FirebaseCrash;
 import com.solutionner.policebharatiapp.R;
@@ -40,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
     @InjectView(R.id.edtPassword)
     EditText edtPassword;
     @InjectView(R.id.btnEdit)
-    EditText btnEdit;
+    Button btnEdit;
 
     AlertDialogs mAlert;
     UpdateProfileServiceProvider updateProfileServiceProvider;
@@ -69,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
         edtPassword.setEnabled(false);
 
         //Call Get User Api
-        CallGetUserDataApi(PoliceBharatiApplication.onGetUserId());
+        CallGetUserDataApi("2");
     }
 
     private void CallGetUserDataApi(String userId) {
@@ -82,6 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
                     String message = ((GetProfileModel) serviceResponse).getMessage();
                     ArrayList<GetProfileModel.Data> mLoginData = ((GetProfileModel) serviceResponse).getData();
                     if (Status == 200) {
+                        mAlert.onShowToastNotification(ProfileActivity.this, message);
                     } else {
                         mAlert.onShowToastNotification(ProfileActivity.this, message);
                     }
@@ -125,12 +128,6 @@ public class ProfileActivity extends AppCompatActivity {
             edtPassword.setEnabled(true);
         } else if (getEditText.equals("Save")) {
 
-            getName = edtName.getText().toString();
-            getCity = edtCity.getText().toString();
-            getAddress = edtAddress.getText().toString();
-            getPassword = edtPassword.getText().toString();
-
-
             if (getName.length() < 0) {
                 edtName.setError("Please enter username");
             } else if (edtMobile.getText().length() < 10) {
@@ -143,22 +140,19 @@ public class ProfileActivity extends AppCompatActivity {
                 edtPassword.setError("Please enter 4 digit password");
             } else {
                 getMobile = edtMobile.getText().toString();
+                getName = edtName.getText().toString();
+                getCity = edtCity.getText().toString();
+                getAddress = edtAddress.getText().toString();
+                getPassword = edtPassword.getText().toString();
 
-//                getName = edtName.getText().toString();
-//                getMobile = edtMobile.getText().toString();
-//                getCity = edtCity.getText().toString();
-//                getAddress = edtAddress.getText().toString();
-//                getPassword = edtPassword.getText().toString();
-
-                CallUpdateApi(getName, getMobile, getCity, getAddress, getPassword);
+                CallUpdateApi(getMobile, getName, getCity, getAddress, getPassword);
             }
         }
     }
 
-    private void CallUpdateApi(String getName, String getMobile, String getCity, String
-            getAddress, String getPassword) {
+    private void CallUpdateApi(String getUserId, String getName, String getCity, String getAddress, String getPassword) {
         mAlert.onShowProgressDialog(ProfileActivity.this, true);
-        updateProfileServiceProvider.CallUpdate(getName, getMobile, getCity, getAddress, getPassword, new APICallback() {
+        updateProfileServiceProvider.CallUpdate(getUserId, getName, getCity, getAddress, getPassword, new APICallback() {
             @Override
             public <T> void onSuccess(T serviceResponse) {
                 try {
@@ -173,6 +167,7 @@ public class ProfileActivity extends AppCompatActivity {
                         edtAddress.setEnabled(false);
                         edtPassword.setEnabled(false);
 
+                        mAlert.onShowToastNotification(ProfileActivity.this, message);
                         mAlert.onShowProgressDialog(ProfileActivity.this, false);
 
                     } else {

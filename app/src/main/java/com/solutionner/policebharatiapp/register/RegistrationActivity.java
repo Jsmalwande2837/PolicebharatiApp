@@ -221,13 +221,13 @@ public class RegistrationActivity extends AppCompatActivity {
         getPassword = edtPassword.getText().toString();
 
 
-        if (getName.length() < 0) {
+        if (edtName.getText().length() < 4) {
             edtName.setError("Please enter username");
         } else if (edtMobile.getText().length() < 10) {
             edtMobile.setError("Please enter valid phone number");
-        } else if (getCity.length() < 1) {
+        } else if (getCity.length() < 3) {
             edtCity.setError("Please enter city");
-        } else if (getAddress.length() < 1) {
+        } else if (getAddress.length() < 3) {
             edtAddress.setError("Please enter address");
         } else if (getPassword.length() < 4) {
             edtPassword.setError("Please enter 4 digit password");
@@ -235,14 +235,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
             getMobile = edtMobile.getText().toString();
 
-//            getName = edtName.getText().toString();
-//            getMobile = edtMobile.getText().toString();
-//            getCity = edtCity.getText().toString();
-//            getAddress = edtAddress.getText().toString();
-//            getPassword = edtPassword.getText().toString();
+            getName = edtName.getText().toString();
+            getMobile = edtMobile.getText().toString();
+            getCity = edtCity.getText().toString();
+            getAddress = edtAddress.getText().toString();
+            getPassword = edtPassword.getText().toString();
 
-            //CallRegistrationApi(getName, getMobile, getCity, getAddress, getPassword);
-            sendCode(getMobile);
+            CallRegistrationApi(getName, getMobile, getCity, getAddress, getPassword);
         }
     }
 
@@ -256,7 +255,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     this, verificationCallbacks);
         } else {
             PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                    "+" + getMobile,
+                    "+91" + getMobile,
                     60,
                     java.util.concurrent.TimeUnit.SECONDS,
                     this, verificationCallbacks);
@@ -299,9 +298,8 @@ public class RegistrationActivity extends AppCompatActivity {
                 try {
                     int Status = (((RegistrationModel) serviceResponse).getStatus());
                     String message = ((RegistrationModel) serviceResponse).getMessage();
-                    ArrayList<RegistrationModel.Data> mLoginData = ((RegistrationModel) serviceResponse).getData();
+                    //ArrayList<RegistrationModel.User_data> mLoginData = ((RegistrationModel) serviceResponse).getUser_data();
                     if (Status == 200) {
-
                         sendCode(getMobile);
                         mAlert.onShowProgressDialog(RegistrationActivity.this, false);
 
@@ -373,6 +371,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             if (task.getException() instanceof
                                     FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
+                                Toast.makeText(RegistrationActivity.this, "Invalid Verification", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

@@ -12,10 +12,10 @@ import retrofit2.http.POST;
  */
 
 public interface RegistrationService {
-    @POST("submitRatings")
+    @POST("registration_user.php")
     @FormUrlEncoded
     Call<RegistrationModel> registration(@Field("Name") String Name,
-                                         @Field("Mobile") String Mobile,
+                                         @Field("UserId") String Mobile,
                                          @Field("City") String City,
                                          @Field("Address") String Address,
                                          @Field("Password") String Password);

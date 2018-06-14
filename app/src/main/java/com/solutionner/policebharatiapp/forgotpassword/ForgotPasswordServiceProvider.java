@@ -24,9 +24,9 @@ public class ForgotPasswordServiceProvider {
         forgotPasswordService = APIServiceFactory.createService(ForgotPasswordService.class, context);
     }
 
-    public void GetProfile(String name, String mobile, final APICallback apiCallback) {
+    public void GetProfile(String name, final APICallback apiCallback) {
         Call<ForgotPasswordModel> call = null;
-        call = forgotPasswordService.ForgotPasswordApi(name, mobile);
+        call = forgotPasswordService.ForgotPasswordApi(name);
         String url = call.request().url().toString();
 
         call.enqueue(new Callback<ForgotPasswordModel>() {
@@ -34,7 +34,7 @@ public class ForgotPasswordServiceProvider {
             public void onResponse(Call<ForgotPasswordModel> call, Response<ForgotPasswordModel> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 200) {
                     apiCallback.onSuccess(response.body());
-                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 500) {
+                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 404) {
                     apiCallback.onSuccess(response.body());
                 } else {
                     BaseServiceResponseModel model = ErrorUtils.parseError(response);

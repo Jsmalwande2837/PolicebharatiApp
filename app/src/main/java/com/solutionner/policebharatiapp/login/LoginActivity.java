@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.buy.BuyActivity;
+import com.solutionner.policebharatiapp.forgotpassword.ForgotPasswordModel;
+import com.solutionner.policebharatiapp.forgotpassword.ForgotPasswordServiceProvider;
 import com.solutionner.policebharatiapp.register.RegistrationActivity;
 import com.solutionner.policebharatiapp.utils.APICallback;
 import com.solutionner.policebharatiapp.utils.AlertDialogs;
@@ -28,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private Dialog dialog;
     AlertDialogs mAlert;
     private LoginServiceProvider loginServiceProvider;
-
+    private ForgotPasswordServiceProvider forgotPasswordServiceProvider;
     @InjectView(R.id.edtMobile)
     EditText edtMobile;
     @InjectView(R.id.edtPassword)
@@ -50,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         mAlert = AlertDialogs.getInstance();
         mAlert.firebaseAnalytics(this.getClass().getSimpleName());
         loginServiceProvider = new LoginServiceProvider(this);
+        forgotPasswordServiceProvider = new ForgotPasswordServiceProvider(this);
     }
 
 
@@ -91,7 +95,8 @@ public class LoginActivity extends AppCompatActivity {
                     String message = ((LoginModel) serviceResponse).getMessage();
                     ArrayList<LoginModel.Data> mLoginData = ((LoginModel) serviceResponse).getData();
                     if (Status == 200) {
-
+                        mAlert.onShowToastNotification(LoginActivity.this, message);
+                        startActivity(new Intent(LoginActivity.this, BuyActivity.class));
                         mAlert.onShowProgressDialog(LoginActivity.this, false);
 
                     } else {
@@ -151,11 +156,52 @@ public class LoginActivity extends AppCompatActivity {
                     edtMobileNo.setError("Enter Mobile no");
                 } else {
                     String mobileNo = edtMobileNo.getText().toString();
-                    //CallForgotApi(mobileNo);
+                    CallForgotApi(mobileNo, dialog);
                     dialog.dismiss();
                 }
             }
         });
     }
 
+    private void CallForgotApi(String mobileNo, final Dialog dialog) {
+        mAlert.onShowProgressDialog(LoginActivity.this, true);
+        forgotPasswordServiceProvider.GetProfile(mobileNo, new APICallback() {
+            @Override
+            public <T> void onSuccess(T serviceResponse) {
+                try {
+                    int Status = (((ForgotPasswordModel) serviceResponse).getStatus());
+                    String message = ((ForgotPasswordModel) serviceResponse).getMessage();
+                    // ArrayList<ForgotPasswordModel.Data> mLoginData = ((ForgotPasswordModel) serviceResponse).getData();
+                    if (Status == 200) {
+                        dialog.dismiss();
+                        mAlert.onShowToastNotification(LoginActivity.this, message);
+                        mAlert.onShowProgressDialog(LoginActivity.this, false);
+                    } else {
+                        mAlert.onShowToastNotification(LoginActivity.this, message);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    mAlert.onShowProgressDialog(LoginActivity.this, false);
+                }
+            }
+
+            @Override
+            public <T> void onFailure(T apiErrorModel, T extras) {
+                try {
+
+                    if (apiErrorModel != null) {
+                        PrintUtil.showToast(LoginActivity.this, ((BaseServiceResponseModel) apiErrorModel).getMessage());
+                    } else {
+                        PrintUtil.showNetworkAvailableToast(LoginActivity.this);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    PrintUtil.showNetworkAvailableToast(LoginActivity.this);
+                } finally {
+                    mAlert.onShowProgressDialog(LoginActivity.this, false);
+                }
+            }
+        });
+    }
 }

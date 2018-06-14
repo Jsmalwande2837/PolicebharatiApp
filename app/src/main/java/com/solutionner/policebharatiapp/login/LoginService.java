@@ -12,7 +12,7 @@ import retrofit2.http.POST;
  */
 
 public interface LoginService {
-    @POST("submitRatings")
+    @POST("login.php")
     @FormUrlEncoded
     Call<LoginModel> loginApi(@Field("Mobile") String Mobile,
                               @Field("Password") String Password);
