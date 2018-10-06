@@ -4,42 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGradient">
+    android:background="@drawable/reset_bg_top">
 
 
-    <RelativeLayout
-        android:id="@+id/relTop"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/colorPrimary">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/height_10"
-            android:text="PoliceBharati app"
-            android:textColor="@android:color/white"
-            android:textSize="26dp" />
-    </RelativeLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circularPicProfile"
-        android:layout_width="@dimen/height_90"
-        android:layout_height="@dimen/height_90"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/height_55"
-        android:src="@drawable/profileimage"
-        app:civ_border_color="@color/colorPrimary"
-        app:civ_border_width="@dimen/height_2" />
-
+    <include
+        android:id="@+id/custom_toolbar"
+        layout="@layout/custom_toolbar" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/llBottom"
-        android:layout_below="@+id/circularPicProfile">
+        android:layout_below="@+id/custom_toolbar">
 
         <Button
             android:id="@+id/btnEdit"
@@ -67,13 +43,14 @@
                 android:id="@+id/layout_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
+                    android:layout_width="@dimen/height_22"
+                    android:layout_height="@dimen/height_22"
+                    android:layout_above="@+id/mogo_layout"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/user_black" />
 
@@ -82,154 +59,203 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="NAME"
+                    android:background="@android:color/transparent"
+                    android:hint="Name"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
+                    android:textColor="@color/colorblack"
+                    android:textColorHint="@color/colorfaintblack"
                     android:textCursorDrawable="@null" />
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="5dp"
+                android:background="#000" />
 
             <LinearLayout
                 android:id="@+id/layout_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="5dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
+                    android:id="@+id/username_icon"
+                    android:layout_width="@dimen/height_22"
+                    android:layout_height="@dimen/height_22"
+                    android:layout_above="@+id/mogo_layout"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/phone_receiver" />
+
 
                 <EditText
                     android:id="@+id/edtMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="MOBILENO"
+                    android:background="@android:color/transparent"
+                    android:hint="MobileNo"
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
+                    android:textColor="@color/colorblack"
+                    android:textColorHint="@color/colorfaintblack"
                     android:textCursorDrawable="@null" />
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="5dp"
+                android:background="#000" />
 
             <LinearLayout
                 android:id="@+id/layout_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="5dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
+                    android:layout_width="@dimen/height_22"
+                    android:layout_height="@dimen/height_22"
+                    android:layout_above="@+id/mogo_layout"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/buildings" />
+
 
                 <EditText
                     android:id="@+id/edtCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="CITY"
+                    android:background="@android:color/transparent"
+                    android:hint="City"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
+                    android:textColor="@color/colorblack"
+                    android:textColorHint="@color/colorfaintblack"
                     android:textCursorDrawable="@null" />
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="5dp"
+                android:background="#000" />
 
             <LinearLayout
                 android:id="@+id/layout_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="5dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
+                    android:layout_width="@dimen/height_22"
+                    android:layout_height="@dimen/height_22"
+                    android:layout_above="@+id/mogo_layout"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/home" />
+
 
                 <EditText
                     android:id="@+id/edtAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="ADDRESS"
+                    android:background="@android:color/transparent"
+                    android:hint="Address"
                     android:imeOptions="actionDone"
                     android:inputType="text"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
+                    android:textColor="@color/colorblack"
+                    android:textColorHint="@color/colorfaintblack"
                     android:textCursorDrawable="@null" />
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="5dp"
+                android:background="#000" />
+
             <LinearLayout
                 android:id="@+id/layout_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/height_10"
-                android:layout_marginRight="@dimen/height_10"
-                android:layout_marginTop="5dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
+                    android:layout_width="@dimen/height_22"
+                    android:layout_height="@dimen/height_22"
+                    android:layout_above="@+id/mogo_layout"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/lockie" />
+
 
                 <EditText
                     android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/border_for_bottom_lineview"
-                    android:hint="PASSWORD"
+                    android:background="@android:color/transparent"
+                    android:hint="Password"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword|textCapSentences"
                     android:maxLines="1"
                     android:padding="8dp"
-                    android:textAllCaps="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimary"
-                    android:textColorHint="@color/colorPrimary"
+                    android:textColor="@color/colorblack"
+                    android:textColorHint="@color/colorfaintblack"
                     android:textCursorDrawable="@null" />
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/height_25"
+                android:layout_marginRight="@dimen/height_25"
+                android:layout_marginTop="5dp"
+                android:background="#000" />
 
 
         </LinearLayout>
@@ -240,6 +266,9 @@
         android:id="@+id/llBottom"
         layout="@layout/bottom_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_50"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="@dimen/height_55"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/height_2"
+        android:layout_marginLeft="@dimen/height_2"
+        android:layout_marginRight="@dimen/height_2" />
 </RelativeLayout>

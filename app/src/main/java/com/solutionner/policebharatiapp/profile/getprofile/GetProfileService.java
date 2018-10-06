@@ -12,7 +12,7 @@ import retrofit2.http.POST;
  */
 
 public interface GetProfileService {
-    @POST("fetch_user_profile.php")
+    @POST("getuserbyid.php")
     @FormUrlEncoded
     Call<GetProfileModel> GetProfileApi(@Field("UserId") String UserId);
 }

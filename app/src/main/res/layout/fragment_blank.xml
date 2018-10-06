@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/height_35">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/txtEmpty"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="@dimen/height_15"
+            android:paddingLeft="@dimen/height_25"
+            android:paddingRight="@dimen/height_25"
+            android:paddingTop="@dimen/height_15"
+            android:text="Exam \nPractice"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtEmpty"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true" />
+
+        <Button
+            android:id="@+id/btnStudyMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtEmpty"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="@dimen/height_15"
+            android:paddingLeft="@dimen/height_25"
+            android:paddingRight="@dimen/height_25"
+            android:paddingTop="@dimen/height_15"
+            android:text="Study \nMaterial"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBuyNow"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_40"
+            android:layout_below="@+id/btnStudyMaterial"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/height_35"
+            android:background="@drawable/blue_button_border"
+            android:paddingBottom="@dimen/height_5"
+            android:paddingLeft="@dimen/height_15"
+            android:paddingRight="@dimen/height_15"
+            android:paddingTop="@dimen/height_5"
+            android:text="Buy now !"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/llFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relTab"
+        android:layout_marginTop="@dimen/height_35"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_marginRight="@dimen/height_20"
+            android:layout_toLeftOf="@+id/btnSecond"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/btnSecond"
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_toLeftOf="@+id/viewEmpty"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/viewEmpty"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true" />
+
+        <Button
+            android:id="@+id/btnThird"
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_toRightOf="@+id/viewEmpty"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_marginLeft="@dimen/height_20"
+            android:layout_toRightOf="@+id/btnThird"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llFirst"
+        android:layout_marginTop="@dimen/height_15"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_marginRight="@dimen/height_20"
+            android:layout_toLeftOf="@+id/btnSix"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/btnSix"
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_toLeftOf="@+id/viewEmpty2"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/viewEmpty2"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true" />
+
+        <Button
+            android:id="@+id/btnSeven"
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_toRightOf="@+id/viewEmpty2"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="@dimen/height_60"
+            android:layout_marginLeft="@dimen/height_20"
+            android:layout_toRightOf="@+id/btnSeven"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="40dp" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/llBottom"
+        layout="@layout/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_50"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/height_2"
+        android:layout_marginLeft="@dimen/height_2"
+        android:layout_marginRight="@dimen/height_2" />
+</RelativeLayout>

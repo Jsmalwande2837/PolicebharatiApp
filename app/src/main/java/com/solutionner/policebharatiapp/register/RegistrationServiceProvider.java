@@ -34,7 +34,7 @@ public class RegistrationServiceProvider {
             public void onResponse(Call<RegistrationModel> call, Response<RegistrationModel> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 200) {
                     apiCallback.onSuccess(response.body());
-                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 500) {
+                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 404) {
                     apiCallback.onSuccess(response.body());
                 } else {
                     BaseServiceResponseModel model = ErrorUtils.parseError(response);

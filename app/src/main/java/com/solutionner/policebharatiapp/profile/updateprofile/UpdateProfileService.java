@@ -10,7 +10,7 @@ import retrofit2.http.POST;
  */
 
 public interface UpdateProfileService {
-    @POST("update_profile.php")
+    @POST("updateprofile.php")
     @FormUrlEncoded
     Call<UpdateProfileModel> UpdateApi(@Field("UserId") String UserId,
                                        @Field("Name") String Name,

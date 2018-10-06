@@ -8,9 +8,9 @@
 
     <include
         android:id="@+id/relTop"
-        layout="@layout/top_layout"
+        layout="@layout/custom_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_80" />
+        android:layout_height="@dimen/height_60" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -96,7 +96,10 @@
         android:id="@+id/llBottom"
         layout="@layout/bottom_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_50"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="@dimen/height_55"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/height_2"
+        android:layout_marginLeft="@dimen/height_2"
+        android:layout_marginRight="@dimen/height_2" />
 
 </RelativeLayout>

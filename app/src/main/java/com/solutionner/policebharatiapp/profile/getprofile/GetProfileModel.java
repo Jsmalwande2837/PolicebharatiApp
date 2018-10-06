@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.solutionner.policebharatiapp.utils.BaseServiceResponseModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jitesh on 3/15/18.
@@ -13,122 +14,85 @@ import java.util.ArrayList;
 
 public class GetProfileModel extends BaseServiceResponseModel {
 
+
     @Expose
-    @SerializedName("data")
-    private ArrayList<Data> data;
+    @SerializedName("user_data")
+    private ArrayList<User_data> user_data;
 
-    public ArrayList<Data> getData() {
-        return data;
+    public ArrayList<User_data> getUser_data() {
+        return user_data;
     }
 
-    public void setData(ArrayList<Data> data) {
-        this.data = data;
+    public void setUser_data(ArrayList<User_data> user_data) {
+        this.user_data = user_data;
     }
 
-    public static class Data {
+    public static class User_data {
         @Expose
-        @SerializedName("updated_at")
-        private String updated_at;
+        @SerializedName("Password")
+        private String Password;
         @Expose
-        @SerializedName("created_at")
-        private String created_at;
+        @SerializedName("Address")
+        private String Address;
         @Expose
-        @SerializedName("address")
-        private String address;
+        @SerializedName("City")
+        private String City;
         @Expose
-        @SerializedName("mobile_number")
-        private String mobile_number;
+        @SerializedName("Mobile")
+        private String Mobile;
         @Expose
-        @SerializedName("password")
-        private String password;
+        @SerializedName("Name")
+        private String Name;
         @Expose
-        @SerializedName("user_name")
-        private String user_name;
-        @Expose
-        @SerializedName("user_role")
-        private String user_role;
-        @Expose
-        @SerializedName("name")
-        private String name;
-        @Expose
-        @SerializedName("id")
-        private String id;
-
-        public String getUpdated_at() {
-            return updated_at;
-        }
-
-        public void setUpdated_at(String updated_at) {
-            this.updated_at = updated_at;
-        }
-
-        public String getCreated_at() {
-            return created_at;
-        }
-
-        public void setCreated_at(String created_at) {
-            this.created_at = created_at;
-        }
-
-        public String getAddress() {
-            return address;
-        }
-
-        public void setAddress(String address) {
-            this.address = address;
-        }
-
-        public String getMobile_number() {
-            return mobile_number;
-        }
-
-        public void setMobile_number(String mobile_number) {
-            this.mobile_number = mobile_number;
-        }
+        @SerializedName("UserId")
+        private String UserId;
 
         public String getPassword() {
-            return password;
+            return Password;
         }
 
         public void setPassword(String password) {
-            this.password = password;
+            Password = password;
         }
 
-        public String getUser_name() {
-            return user_name;
+        public String getAddress() {
+            return Address;
         }
 
-        public void setUser_name(String user_name) {
-            this.user_name = user_name;
+        public void setAddress(String address) {
+            Address = address;
         }
 
-        public String getUser_role() {
-            return user_role;
+        public String getCity() {
+            return City;
         }
 
-        public void setUser_role(String user_role) {
-            this.user_role = user_role;
+        public void setCity(String city) {
+            City = city;
+        }
+
+        public String getMobile() {
+            return Mobile;
+        }
+
+        public void setMobile(String mobile) {
+            Mobile = mobile;
         }
 
         public String getName() {
-            return name;
+            return Name;
         }
 
         public void setName(String name) {
-            this.name = name;
+            Name = name;
         }
 
-        public String getId() {
-            return id;
+        public String getUserId() {
+            return UserId;
         }
 
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        @Override
-        public String toString() {
-            return name;
+        public void setUserId(String userId) {
+            UserId = userId;
         }
     }
 }

@@ -1,23 +1,18 @@
 package com.solutionner.policebharatiapp.profile;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputFilter;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.google.firebase.crash.FirebaseCrash;
 import com.solutionner.policebharatiapp.R;
-import com.solutionner.policebharatiapp.application.PoliceBharatiApplication;
+import com.solutionner.policebharatiapp.application.ExamApplication;
 import com.solutionner.policebharatiapp.profile.getprofile.GetProfileModel;
 import com.solutionner.policebharatiapp.profile.getprofile.GetProfileServiceProvider;
 import com.solutionner.policebharatiapp.profile.updateprofile.UpdateProfileModel;
 import com.solutionner.policebharatiapp.profile.updateprofile.UpdateProfileServiceProvider;
-import com.solutionner.policebharatiapp.register.RegistrationModel;
-import com.solutionner.policebharatiapp.register.RegistrationServiceProvider;
 import com.solutionner.policebharatiapp.utils.APICallback;
 import com.solutionner.policebharatiapp.utils.AlertDialogs;
 import com.solutionner.policebharatiapp.utils.BaseServiceResponseModel;
@@ -31,6 +26,8 @@ import butterknife.OnClick;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    @InjectView(R.id.custom_toolbar)
+    Toolbar custom_toolbar;
     @InjectView(R.id.edtName)
     EditText edtName;
     @InjectView(R.id.edtMobile)
@@ -56,6 +53,10 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         ButterKnife.inject(this);
         initObjects();
+        setSupportActionBar(custom_toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        custom_toolbar.setContentInsetStartWithNavigation(0);
     }
 
     private void initObjects() {
@@ -71,7 +72,7 @@ public class ProfileActivity extends AppCompatActivity {
         edtPassword.setEnabled(false);
 
         //Call Get User Api
-        CallGetUserDataApi("2");
+        CallGetUserDataApi(ExamApplication.onGetUserId());
     }
 
     private void CallGetUserDataApi(String userId) {
@@ -82,9 +83,15 @@ public class ProfileActivity extends AppCompatActivity {
                 try {
                     int Status = (((GetProfileModel) serviceResponse).getStatus());
                     String message = ((GetProfileModel) serviceResponse).getMessage();
-                    ArrayList<GetProfileModel.Data> mLoginData = ((GetProfileModel) serviceResponse).getData();
+                    ArrayList<GetProfileModel.User_data> mGetProfileData = ((GetProfileModel) serviceResponse).getUser_data();
                     if (Status == 200) {
-                        mAlert.onShowToastNotification(ProfileActivity.this, message);
+                        //mAlert.onShowToastNotification(ProfileActivity.this, message);
+                        edtName.setText(mGetProfileData.get(0).getName());
+                        edtMobile.setText(mGetProfileData.get(0).getMobile());
+                        edtCity.setText(mGetProfileData.get(0).getCity());
+                        edtAddress.setText(mGetProfileData.get(0).getAddress());
+                        edtPassword.setText(mGetProfileData.get(0).getPassword());
+
                     } else {
                         mAlert.onShowToastNotification(ProfileActivity.this, message);
                     }
@@ -119,24 +126,24 @@ public class ProfileActivity extends AppCompatActivity {
 
         String getEditText = btnEdit.getText().toString();
 
-        if (getEditText.equals("Edit")) {
+        if (getEditText.equalsIgnoreCase("Edit")) {
             btnEdit.setText("Save");
             edtName.setEnabled(true);
             edtMobile.setEnabled(false);
             edtCity.setEnabled(true);
             edtAddress.setEnabled(true);
             edtPassword.setEnabled(true);
-        } else if (getEditText.equals("Save")) {
+        } else if (getEditText.equalsIgnoreCase("Save")) {
 
-            if (getName.length() < 0) {
+            if (edtName.getText().length() < 1) {
                 edtName.setError("Please enter username");
             } else if (edtMobile.getText().length() < 10) {
                 edtMobile.setError("Please enter valid phone number");
-            } else if (getCity.length() < 1) {
+            } else if (edtCity.getText().length() < 1) {
                 edtCity.setError("Please enter city");
-            } else if (getAddress.length() < 1) {
+            } else if (edtAddress.getText().length() < 1) {
                 edtAddress.setError("Please enter address");
-            } else if (getPassword.length() < 4) {
+            } else if (edtPassword.getText().length() < 4) {
                 edtPassword.setError("Please enter 4 digit password");
             } else {
                 getMobile = edtMobile.getText().toString();
@@ -145,7 +152,7 @@ public class ProfileActivity extends AppCompatActivity {
                 getAddress = edtAddress.getText().toString();
                 getPassword = edtPassword.getText().toString();
 
-                CallUpdateApi(getMobile, getName, getCity, getAddress, getPassword);
+                CallUpdateApi(ExamApplication.onGetUserId(),getName,getCity, getAddress, getPassword);
             }
         }
     }
@@ -158,14 +165,23 @@ public class ProfileActivity extends AppCompatActivity {
                 try {
                     int Status = (((UpdateProfileModel) serviceResponse).getStatus());
                     String message = ((UpdateProfileModel) serviceResponse).getMessage();
-                    ArrayList<UpdateProfileModel.Data> mLoginData = ((UpdateProfileModel) serviceResponse).getData();
+                    ArrayList<UpdateProfileModel.User_data> mUpdateData = ((UpdateProfileModel) serviceResponse).getUser_data();
                     if (Status == 200) {
+                        ExamApplication.onSaveLoginDetail(String.valueOf(mUpdateData.get(0).getUserId()), mUpdateData.get(0).getName(), mUpdateData.get(0).getMobile(),
+                                mUpdateData.get(0).getCity(), mUpdateData.get(0).getAddress(), mUpdateData.get(0).getPassword());
+
+                        edtName.setText(mUpdateData.get(0).getName());
+                        edtMobile.setText(mUpdateData.get(0).getMobile());
+                        edtCity.setText(mUpdateData.get(0).getCity());
+                        edtAddress.setText(mUpdateData.get(0).getAddress());
+                        edtPassword.setText(mUpdateData.get(0).getPassword());
 
                         edtName.setEnabled(false);
                         edtMobile.setEnabled(false);
                         edtCity.setEnabled(false);
                         edtAddress.setEnabled(false);
                         edtPassword.setEnabled(false);
+                        btnEdit.setText("Edit");
 
                         mAlert.onShowToastNotification(ProfileActivity.this, message);
                         mAlert.onShowProgressDialog(ProfileActivity.this, false);
@@ -200,4 +216,16 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                finish();
+                ProfileActivity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

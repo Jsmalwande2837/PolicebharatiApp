@@ -17,6 +17,7 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.solutionner.policebharatiapp.R;
 
+import org.acra.ACRA;
 import org.acra.ReportField;
 import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
@@ -31,10 +32,11 @@ import org.acra.annotation.ReportsCrashes;
         mode = ReportingInteractionMode.TOAST,
         resToastText = R.string.crash_toast_text)
 
-public class PoliceBharatiApplication extends MultiDexApplication {
+public class ExamApplication extends MultiDexApplication {
 
     private static Context mContext;
     private static SharedPreferences mSharedPreferences;
+    private static Typeface english, marathi;
 
     @Override
     public void onCreate() {
@@ -42,6 +44,8 @@ public class PoliceBharatiApplication extends MultiDexApplication {
         //ACRA.init(this);
         mContext = getApplicationContext();
         mSharedPreferences = mContext.getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        english = Typeface.createFromAsset(getAssets(), "fonts/nunito_sans_regular.ttf");
+        marathi = Typeface.createFromAsset(getAssets(), "fonts/marathi_font_file.ttf");
     }
 
     public static Context getContext() {
@@ -86,4 +90,12 @@ public class PoliceBharatiApplication extends MultiDexApplication {
         return mSharedPreferences.getString("PASSWORD", "");
     }
 
+
+    public static Typeface getEnglishFont() {
+        return english;
+    }
+
+    public static Typeface getMarathiFont() {
+        return marathi;
+    }
 }

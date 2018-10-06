@@ -34,7 +34,7 @@ public class LoginServiceProvider {
             public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 200) {
                     apiCallback.onSuccess(response.body());
-                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 500) {
+                } else if (response.isSuccessful() && response.body() != null && response.body().getStatus() == 404) {
                     apiCallback.onSuccess(response.body());
                 } else {
                     BaseServiceResponseModel model = ErrorUtils.parseError(response);

@@ -13,7 +13,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
+import com.solutionner.policebharatiapp.MainActivity;
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.application.ExamApplication;
+import com.solutionner.policebharatiapp.buy.BuyActivity;
 import com.solutionner.policebharatiapp.login.LoginActivity;
 
 import java.util.ArrayList;
@@ -49,9 +52,16 @@ public class SplashActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         e.printStackTrace();
                     } finally {
-                        Intent lIntent = new Intent(SplashActivity.this, LoginActivity.class);
-                        startActivity(lIntent);
-                        finish();
+                        if (ExamApplication.onGetName().isEmpty() && ExamApplication.onGetPassword().isEmpty()) {
+                            Intent lIntent = new Intent(SplashActivity.this, LoginActivity.class);
+                            startActivity(lIntent);
+                            finish();
+                        } else {
+                            Intent lIntent = new Intent(SplashActivity.this, MainActivity.class);
+                            startActivity(lIntent);
+                            finish();
+                        }
+
                     }
                 }
             }, 2000);

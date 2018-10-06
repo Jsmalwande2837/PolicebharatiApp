@@ -6,14 +6,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,18 +30,17 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.solutionner.policebharatiapp.MainActivity;
 import com.solutionner.policebharatiapp.R;
+import com.solutionner.policebharatiapp.application.ExamApplication;
 import com.solutionner.policebharatiapp.buy.BuyActivity;
-import com.solutionner.policebharatiapp.login.LoginModel;
 import com.solutionner.policebharatiapp.profile.ProfileActivity;
-import com.solutionner.policebharatiapp.sms.SmsReceiver;
 import com.solutionner.policebharatiapp.utils.APICallback;
 import com.solutionner.policebharatiapp.utils.AlertDialogs;
 import com.solutionner.policebharatiapp.utils.BaseServiceResponseModel;
 import com.solutionner.policebharatiapp.utils.PrintUtil;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -51,6 +50,8 @@ import butterknife.OnClick;
 
 public class RegistrationActivity extends AppCompatActivity {
 
+    @InjectView(R.id.custom_toolbar)
+    Toolbar custom_toolbar;
     @InjectView(R.id.edtName)
     EditText edtName;
     @InjectView(R.id.edtMobile)
@@ -64,8 +65,6 @@ public class RegistrationActivity extends AppCompatActivity {
     @InjectView(R.id.BtnRegister)
     Button BtnRegister;
 
-    @InjectView(R.id.relativeProfile)
-    RelativeLayout relativeProfile;
     @InjectView(R.id.nestscrollmain)
     NestedScrollView nestscrollmain;
     @InjectView(R.id.relOtp)
@@ -104,15 +103,27 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         ButterKnife.inject(this);
         init();
+        setSupportActionBar(custom_toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        custom_toolbar.setContentInsetStartWithNavigation(0);
     }
 
     private void init() {
         mAlert = AlertDialogs.getInstance();
         mAlert.firebaseAnalytics(this.getClass().getSimpleName());
         firebaseAuth = FirebaseAuth.getInstance();
-        relOtp.setVisibility(View.GONE);
         registrationServiceProvider = new RegistrationServiceProvider(this);
-        edtName.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+
+        //for font
+        edtName.setTypeface(ExamApplication.getEnglishFont());
+        edtPassword.setTypeface(ExamApplication.getEnglishFont());
+        edtCity.setTypeface(ExamApplication.getEnglishFont());
+        edtAddress.setTypeface(ExamApplication.getEnglishFont());
+        edtPassword.setTypeface(ExamApplication.getEnglishFont());
+        BtnRegister.setTypeface(ExamApplication.getEnglishFont());
+
+        //edtName.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
 
 
         edtOtp1.addTextChangedListener(new TextWatcher() {
@@ -298,9 +309,14 @@ public class RegistrationActivity extends AppCompatActivity {
                 try {
                     int Status = (((RegistrationModel) serviceResponse).getStatus());
                     String message = ((RegistrationModel) serviceResponse).getMessage();
-                    //ArrayList<RegistrationModel.User_data> mLoginData = ((RegistrationModel) serviceResponse).getUser_data();
+                    //ArrayList<RegistrationModel.Data> mLoginData = ((RegistrationModel) serviceResponse).getData();
+
+                    RegistrationModel.Data mLoginDatas = ((RegistrationModel) serviceResponse).getData();
+
                     if (Status == 200) {
-                        sendCode(getMobile);
+                        sendCode(mLoginDatas.getMobile());
+                        ExamApplication.onSaveLoginDetail(String.valueOf(mLoginDatas.getUserId()), mLoginDatas.getName(), mLoginDatas.getMobile(),
+                                mLoginDatas.getCity(), mLoginDatas.getAddress(), mLoginDatas.getPassword());
                         mAlert.onShowProgressDialog(RegistrationActivity.this, false);
 
                     } else {
@@ -361,9 +377,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = task.getResult().getUser();
-                            if (relOtp.getVisibility() == View.VISIBLE && !fullOtp.equals("")) {
+                            if (!fullOtp.equals("")) {
                                 Toast.makeText(RegistrationActivity.this, "OTP Match", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RegistrationActivity.this, BuyActivity.class);
+                                Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -371,17 +387,11 @@ public class RegistrationActivity extends AppCompatActivity {
                             if (task.getException() instanceof
                                     FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
-                                Toast.makeText(RegistrationActivity.this, "Invalid Verification", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(RegistrationActivity.this, "Invalid Code Verification", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
                 });
-    }
-
-    @OnClick(R.id.relativeProfile)
-    public void Profile() {
-        startActivity(new Intent(RegistrationActivity.this, ProfileActivity.class));
-        finish();
     }
 
     @OnClick(R.id.BtnCancel)
@@ -452,5 +462,18 @@ public class RegistrationActivity extends AppCompatActivity {
             code = m.group(0);
         }
         return code;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                finish();
+                RegistrationActivity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

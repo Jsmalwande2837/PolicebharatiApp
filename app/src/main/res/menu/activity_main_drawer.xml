@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/sweet_home_icon"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_exam_history"
+            android:icon="@drawable/exam_test"
+            android:title="Exam history" />
+
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/question_mark"
+            android:title="FAQ" />
+
+        <item
+            android:id="@+id/nav_term_cond"
+            android:icon="@drawable/about_us"
+            android:title="T and C" />
+
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:icon="@drawable/padlock"
+            android:title="Privacy Policy" />
+
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/informations"
+            android:title="About Us" />
+
+        <item
+            android:id="@+id/nav_share_app"
+            android:icon="@drawable/share"
+            android:title="Share App" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
+
+    </group>
+</menu>
